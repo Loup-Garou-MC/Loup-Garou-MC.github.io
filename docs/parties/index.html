@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolti - Rejoignez la communauté !</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../navbar.css">
+    
+    <link rel="icon" href="https://yt3.googleusercontent.com/mH5EoGvjAf28i07U9CKryzy5KVpHWLDRvD4InxiX5QuSbxIucBIYBtBjtPQRJulimNkdQ-dLMA=s160-c-k-c0x00ffffff-no-rj" type="image/x-icon"/>
+</head>
+<body>
+
+    <main>
+        
+        <h1>Prochaines parties programmées</h1>
+        <p>Plus d'infos sur le <a href="../discord">Discord</a></p>
+        <section id="parties">
+
+        </section>
+    </main>
+
+    <script>
+        fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT6z3Z6tdmxjav5V0Y50UoYmlrUTK88K0n1wbRsRcZ6VQ455mcQ_pH3iyK8S3_ee4o0YXYpZU_I6z4s/pub?output=csv&gid=1083613691')
+        .then(res => res.text())
+        .then(csvText => {
+            const lines = csvText.trim().split('\n');
+            
+            const headers = lines[0].split(',');
+
+            const data = lines.slice(1).map(line => {
+                const values = line.split(',');
+                let obj = {};
+                headers.forEach((header, i) => {
+                    obj[header.trim()] = values[i].trim();
+                });
+                return obj;
+            });
+
+
+            const parties = document.getElementById("parties");
+
+            if(data.length <= 0) {
+                parties.innerHTML = `<p><b>Aucune partie programmée !</b></p>`
+                return;
+            }
+
+            data.forEach(item => {
+                const div = document.createElement('div');
+
+                div.innerHTML = `
+                    <h2>Partie du ${item.Date}</h2>
+                    <p><strong>Heure prévue :</strong> ${item.Heure ? item.Heure : "<i>Erreur lors de la récupération de l'heure</i>"}</p>
+                    <p><strong>Joueurs attendus :</strong> ${item["Joueurs attendus"] ? item["Joueurs attendus"] : "<i>Erreur lors de la récupération</i>"}</p>
+                    ${item.Lien 
+                        ? `<button onclick="window.open('${item.Lien}', '_blank')" aria-label="S'inscrire à la partie du ${item.Date}">S'inscrire</button>` 
+                        : `<button disabled title="Lien d'inscription non disponible">S'inscrire</button>`
+                    }
+                `;
+
+                div.classList.add('games')
+
+                parties.appendChild(div)
+
+            });
+        })
+        .catch(err => console.error('Erreur fetch stats :', err));
+    </script>
+    <script src="../navbar.js"></script>
+</body>
+</html>

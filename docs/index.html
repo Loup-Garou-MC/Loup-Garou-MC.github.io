@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dolti - Rejoignez la communauté !</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css">
 
     <link rel="icon" href="https://yt3.googleusercontent.com/mH5EoGvjAf28i07U9CKryzy5KVpHWLDRvD4InxiX5QuSbxIucBIYBtBjtPQRJulimNkdQ-dLMA=s160-c-k-c0x00ffffff-no-rj" type="image/x-icon"/>
 </head>
@@ -12,9 +13,61 @@
 
     <main>
         
-        <h1>Salut bouffon</h1>
+        <section class="hero">
+            <img src="logo.png" alt="Logo LG" class="logo">
+            <h1 class="feu-camp">Loup Garou de Bourcelieux</h1>
+            <p>Une nouvelle version du Loup Garou sur Minecraft !</p>
+            <div class="intro">
+                <p class="ambiance">Plonge au cœur d’une nuit sans fin, au péril de ta vie !</p>
+                <p class="ambiance">L’ambiance horrifique est à son paroxysme...</p>
+                <p class="ambiance">Peur et mystère s’entrelacent à Bourcelieux 🔪.</p>
+            </div>
+
+        </section>
+
+        <section class="stats">
+            <div class="stat meurtres">
+                <span class="number">0</span>
+                <span class="label">Meurtres</span>
+            </div>
+            <div class="stat parties">
+                <span class="number">0</span>
+                <span class="label">Parties</span>
+            </div>
+            <div class="stat survivants">
+                <span class="number">0</span>
+                <span class="label">Survivants</span>
+            </div>
+        </section>
+
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT6z3Z6tdmxjav5V0Y50UoYmlrUTK88K0n1wbRsRcZ6VQ455mcQ_pH3iyK8S3_ee4o0YXYpZU_I6z4s/pub?output=csv')
+        .then(res => res.text())
+        .then(csvText => {
+            const lines = csvText.trim().split('\n');
+            const headers = lines[0].split(',');
+
+            const data = lines.slice(1).map(line => {
+                const values = line.split(',');
+                let obj = {};
+                headers.forEach((header, i) => {
+                    obj[header.trim()] = values[i].trim();
+                });
+                return obj;
+            });
+
+            data.forEach(item => {
+                const statClass = item.Stat.toLowerCase();
+                const numberElem = document.querySelector(`.stat.${statClass} .number`);
+
+                if (numberElem) numberElem.textContent = item.Valeur;
+            });
+        })
+        .catch(err => console.error('Erreur fetch stats :', err));
+    </script>
+    <script src="navbar.js"></script>
+    
 </body>
 </html>
