@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentPage = window.location.pathname;
     const match = currentPage.match(/\/([^\/]+)\/?$/);
 
+    console.log(currentPage, match[1])
+
     navbar.className = "navbar";
     navbar.innerHTML = `
         <a ${!match[1] || match[1] === "docs" ? "class='actual'" : ""} href="${!match[1] || match[1] === "docs" ? "" : "../"}">Accueil</a>
