@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navbar.className = "navbar";
     navbar.innerHTML = `
-        <a ${!match || match[1] === "docs" ? "class='actual'" : ""} href="${!match[1] || match[1] === "docs" ? "" : "../"}">Accueil</a>
+        <a ${!match || (match && match[1] === "docs") ? "class='actual'" : ""} href="${!match[1] || match[1] === "docs" ? "" : "../"}">Accueil</a>
         <a ${match[1] === "ressources" ? "class='actual'" : ""} href="${!match[1] || match[1] === "docs" ? "./ressources" : "../ressources"}">Ressources</a>
         <a ${match[1] === "wiki" ? "class='actual'" : ""} href="${!match[1] || match[1] === "docs" ? "./wiki" : "../wiki"}">WiKi</a>
         <a ${match[1] === "parties" ? "class='actual'" : ""} href="${!match[1] || match[1] === "docs" ? "./parties" : "../parties"}">Prochaines parties</a>
