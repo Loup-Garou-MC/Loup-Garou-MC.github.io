@@ -3,6 +3,7 @@ const menuItems = document.querySelectorAll('.menu > li[data-category]');
 const subItems = document.querySelectorAll('.submenu li');
 
 function showSection(id) {
+    window.location.hash = id;
     sections.forEach(sec => sec.style.display = 'none');
     const target = document.getElementById(id);
     if (target) target.style.display = 'block';
