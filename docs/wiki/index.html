@@ -13,34 +13,66 @@
     <div class="sidebar">
         <a href="../">
         <span class="material-symbols-outlined">move_item</span>
-            Retour à l'Accueil
+            Quitter le Wiki
         </a>
         <ul class="menu">
-            <li data-category="base">Base</li>
-            <li data-category="loups">Loups</li>
-            <li data-category="village">Village</li>
-            <li data-category="roles">Rôles spéciaux</li>
-            <li data-category="solo">Solos</li>
-            <li data-category="autres">Autres rôles</li>
+            <li data-category="base">Global
+                <ul class="submenu">
+                    <li data-sub="base">Bases</li>
+                    <li data-sub="events-aleatoires">Évènements aléatoires</li>
+                </ul>
+            </li>
+            <li data-category="loups">🐺 Loups
+                <ul class="submenu">
+                    <li data-sub="loup">Loup-Garou</li>
+                </ul>
+            </li>
+            <li data-category="village">🧑‍🌾 Village
+                <ul class="submenu">
+                    <li data-sub="villageois">Villageois</li>
+                    <li data-sub="voyante">Voyante</li>
+                </ul>
+            </li>
         </ul>
     </div>
 
     <main>
         <section id="base" class="section">
-            <h2>Base</h2>
-            <div class="card">Présentation du jeu, phases jour/nuit, objectifs...</div>
+            <h2>Bases</h2>
+            <div class="card">Bases du jeu</div>
         </section>
-        <section id="loups" class="section">
-            <h2>Loups</h2>
-            <div class="card">Rôle de base : Loup-garou. Ils tuent chaque nuit.</div>
+        <section id="events-aleatoires" class="section">
+            <h2>Évènements aléatoires</h2>
+            <div class="card">Machin chouette</div>
         </section>
-        <section id="village" class="section">
-            <h2>Village</h2>
-            <div class="card">Rôle de base : Le Villeagois. Inquiet pour son village il essaye de découvrir les mystères qu'ils s'y cachent. Quand vient la nuit, il se cache et prie pour que Les créatures de la nuit de ne le trouve pas. Leur but est de débusquer, convaincre et écouter pour trouver les loups.</div>
+
+        <section id="loup" class="section">
+            <h2 class="role-name loup">Loup-Garou</h2>
+            <div class="card">
+                <p><span class="material-symbols-outlined">badge</span> <strong>Nom :</strong> Loup-Garou</p>
+                <p><span class="material-symbols-outlined">flag</span> <strong>Objectif :</strong> Éliminer tous les villageois</p>
+                <p><span class="material-symbols-outlined">nightlight</span> <strong>Appelé quand :</strong> Toutes les nuits</p>
+                <p><span class="material-symbols-outlined">flash_on</span> <strong>Pouvoir :</strong> Peut tuer un joueur chaque nuit</p>
+            </div>
         </section>
-        <section id="solo" class="section">
-            <h2>Solos</h2>
-            <div class="card">Renégat, Enfant Sauvage, etc.</div>
+
+        <section id="villageois" class="section">
+            <h2 class="role-name villageois">Simple Villageois</h2>
+            <div class="card">
+                <p><span class="material-symbols-outlined">badge</span> <strong>Nom :</strong> Simple Villageois</p>
+                <p><span class="material-symbols-outlined">flag</span> <strong>Objectif :</strong> Éliminer tous les loups-garous</p>
+                <p><span class="material-symbols-outlined">nightlight</span> <strong>Appelé quand :</strong> Jamais</p>
+                <p><span class="material-symbols-outlined">flash_on</span> <strong>Pouvoir :</strong> N'a aucun pouvoir.</p>
+            </div>
+        </section>
+        <section id="voyante" class="section">
+            <h2 class="role-name villageois">Voyante</h2>
+            <div class="card">
+                <p><span class="material-symbols-outlined">badge</span> <strong>Nom :</strong> Voyante</p>
+                <p><span class="material-symbols-outlined">flag</span> <strong>Objectif :</strong> Éliminer tous les loups-garous</p>
+                <p><span class="material-symbols-outlined">nightlight</span> <strong>Appelé quand :</strong> Toutes les nuits</p>
+                <p><span class="material-symbols-outlined">flash_on</span> <strong>Pouvoir :</strong> Découvre le rôle d'un joueur.</p>
+            </div>
         </section>
     </main>
 
