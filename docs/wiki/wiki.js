@@ -35,4 +35,14 @@ subItems.forEach(sub => {
     });
 });
 
-showSection('base');
+
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+    if (hash) showSection(hash.substring(1));
+    else showSection('base');
+});
+
+window.addEventListener('hashchange', () => {
+    const hash = window.location.hash;
+    if (hash) showSection(hash.substring(1));
+});
