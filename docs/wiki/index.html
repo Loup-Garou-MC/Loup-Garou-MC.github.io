@@ -3,21 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dolti - Rejoignez la communauté !</title>
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../navbar.css">
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=move_item" />
-
-    <link rel="icon" href="https://yt3.googleusercontent.com/mH5EoGvjAf28i07U9CKryzy5KVpHWLDRvD4InxiX5QuSbxIucBIYBtBjtPQRJulimNkdQ-dLMA=s160-c-k-c0x00ffffff-no-rj" type="image/x-icon"/>
+    <title>Loup Garou de Bourcelieux - Wiki</title>
+    <link rel="stylesheet" href="wiki.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 </head>
 <body>
 
+    <div class="sidebar">
+        <a href="../">
+        <span class="material-symbols-outlined">move_item</span>
+            Retour à l'Accueil
+        </a>
+        <ul class="menu">
+            <li data-category="base">Base</li>
+            <li data-category="loups">Loups</li>
+            <li data-category="village">Village</li>
+            <li data-category="roles">Rôles spéciaux</li>
+            <li data-category="solo">Solos</li>
+            <li data-category="autres">Autres rôles</li>
+        </ul>
+    </div>
+
     <main>
-        <div class="navbar">
-            <a href="#roles">Rôles</a>
-            <a href="../" class="span-align"><span class="material-symbols-outlined">move_item</span>Retour à l'Accueil</a>
-        </div>
+        <section id="base" class="section">
+            <h2>Base</h2>
+            <div class="card">Présentation du jeu, phases jour/nuit, objectifs...</div>
+        </section>
+        <section id="loups" class="section">
+            <h2>Loups</h2>
+            <div class="card">Rôle de base : Loup-garou. Ils tuent chaque nuit.</div>
+        </section>
+        <section id="village" class="section">
+            <h2>Village</h2>
+            <div class="card">Rôle de base : Simple villageois. Leur but est d’éliminer les loups.</div>
+        </section>
+        <section id="solo" class="section">
+            <h2>Solos</h2>
+            <div class="card">Renégat, Enfant Sauvage, etc.</div>
+        </section>
     </main>
+
+    <script src="wiki.js"></script>
+
 </body>
 </html>

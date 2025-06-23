@@ -1,0 +1,143 @@
+:root {
+    --bg: #0c0c0f;
+    --sidebar-bg: #15151a;
+    --text: #ffffff;
+    --text-muted: #a0a0a0;
+    --accent: #3a3a3d;
+    --border: #2e2e33;
+    --hover: #1e1e23;
+    --scrollbar: #555;
+    --scrollbar-hover: #777;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+}
+
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid var(--border);
+}
+
+.sidebar a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--accent);
+    padding: 10px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.sidebar a:hover {
+    background-color: var(--hover);
+}
+
+.material-symbols-outlined {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    padding: 12px 15px;
+    background-color: var(--accent);
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu li:hover, .menu li.active {
+    background-color: var(--hover);
+}
+
+main {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.section {
+    display: none;
+}
+
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+}
+
+.card {
+    background-color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: var(--text-muted);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-hover);
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .menu li {
+        flex-shrink: 0;
+    }
+
+    main {
+        padding: 20px;
+    }
+}
