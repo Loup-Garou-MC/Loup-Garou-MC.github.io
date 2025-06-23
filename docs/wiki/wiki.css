@@ -226,3 +226,7 @@ td.chance {
     color: var(--infos);
     font-weight: bold;
 }
+
+a {
+    color: var(--infos);
+}
