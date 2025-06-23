@@ -1,0 +1,6 @@
+
+User-agent: * 
+
+Allow: /                   
+
+Sitemap: https://loup-garou-mc.github.io/sitemap.xml 
