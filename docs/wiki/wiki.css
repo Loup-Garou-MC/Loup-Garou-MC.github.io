@@ -230,3 +230,7 @@ td.chance {
 a {
     color: var(--infos);
 }
+
+sup {
+    color: var(--infos);
+}
