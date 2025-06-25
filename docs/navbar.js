@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a ${page === "" || page === "docs" ? "class='actual'" : ""} href="${page === "" || page === "docs" ? "" : "../"}">Accueil</a>
         <a ${page === "ressources" ? "class='actual'" : ""} href="${page === "" || page === "docs" ? "./ressources" : "../ressources"}">Ressources</a>
         <a ${page === "wiki" ? "class='actual'" : ""} href="${page === "" || page === "docs" ? "./wiki" : "../wiki"}">WiKi</a>
-        <a href="${page === "" || page === "docs" ? "./wiki#reglement" : "../wiki#reglement"}">Discord</a>
+        <a href="${page === "" || page === "docs" ? "./wiki#reglement" : "../wiki#reglement"}">Règlement</a>
         <a ${page === "parties" ? "class='actual'" : ""} href="${page === "" || page === "docs" ? "./parties" : "../parties"}">Prochaines parties</a>
         <a ${page === "discord" ? "class='actual'" : ""} href="${page === "" || page === "docs" ? "./discord" : "../discord"}">Discord</a>
     
